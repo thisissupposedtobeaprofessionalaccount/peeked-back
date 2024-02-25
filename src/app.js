@@ -13,4 +13,9 @@ app.use(express.json());
 
 app.use("/", require("./routes/image_routes"));
 
+process.on("SIGINT", () => {
+  console.info("Interrupted");
+  process.exit(0);
+});
+
 module.exports = app;
